@@ -4,6 +4,9 @@ const inputImageCar = document.querySelector("#input_car_image");
 const canvasImg = document.querySelector("#canvas_img");
 const classificationText = document.querySelector(".classification");
 
+const containerMain = document.querySelector(".container")
+const loadingMsg = document.querySelector(".loading_msg");
+
 const ctx = canvasImg.getContext("2d");
 
 var model = null;
@@ -13,6 +16,9 @@ var validFiles = ["image/jpeg", "image/png"];
     model = await tf.loadLayersModel("./models/model3/model.json")
     console.log("Modelo cargado ...")
     model.summary()
+
+    containerMain.classList.remove("hidden")
+    loadingMsg.classList.add("hidden")
 })();
 
 inputImageCar.addEventListener("change", async ()=> {

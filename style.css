@@ -17,6 +17,16 @@ body {
     align-items: center;
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hidden {
+    display: none
+}
+
 .image_input_show {
     display: flex;
     flex-direction: column;
