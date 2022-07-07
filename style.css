@@ -1,0 +1,50 @@
+*, *::after, *::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+h4 {
+    margin: 10px 0;
+}
+
+body {
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image_input_show {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 10px;
+}
+
+.image_input_show canvas {
+    width: 150px;
+    height: 150px;
+    background-color: bisque;
+}
+
+#input_car_image {
+    max-width: 200px;
+}
+
+#btn_run_model {
+    border: none;
+    color: #FFF;
+    background-color:  #C70039 ;
+    padding: 0.7em 1em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.classification {
+    margin: 50px 0;
+    font-size: 30px;
+}

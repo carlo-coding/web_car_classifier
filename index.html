@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <title>Car classifier</title>
+</head>
+<body>
+    <h2>Ingresa la imagen de un auto para clasificarlo.</h2>
+    <h4>Hay 7 clases: Audi, Hyundai Creta, Mahindra Scorpio, Rolls Royce, Swift, Tata Safari y Toyota Innova.</h4>
+    <div class="image_input_show">
+        <input type="file" name="car_image" id="input_car_image"/>
+        <canvas  id="canvas_img" width="150px" height="150px"></canvas>
+    </div>
+    <button id="btn_run_model">Clasificar</button>
+
+    <p class="classification">Clasificación</p>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"> </script>
+    <script src="./javascript/utils.js"></script>
+    <script src="./javascript/code.js"></script>
+</body>
+</html>
