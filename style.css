@@ -7,6 +7,8 @@
 
 h4 {
     margin: 10px 0;
+    max-width: 45vw;
+    text-align: center;
 }
 
 body {
@@ -35,9 +37,7 @@ body {
     margin: 10px;
 }
 
-.image_input_show canvas {
-    width: 150px;
-    height: 150px;
+.image_input_show #big_canvas {
     background-color: bisque;
 }
 
@@ -45,16 +45,22 @@ body {
     max-width: 200px;
 }
 
-#btn_run_model {
+.btn {
     border: none;
     color: #FFF;
     background-color:  #C70039 ;
     padding: 0.7em 1em;
     border-radius: 5px;
     cursor: pointer;
+    margin: 10px 0;
 }
 
 .classification {
-    margin: 50px 0;
+    margin: 10px 0;
     font-size: 30px;
+}
+
+.loading_msg {
+    font-size: 20px;
+    margin: 20px 0;
 }

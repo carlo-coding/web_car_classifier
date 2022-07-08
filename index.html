@@ -14,15 +14,19 @@
     <main class="container hidden">
         <div class="image_input_show">
             <input type="file" name="car_image" id="input_car_image"/>
-            <canvas  id="canvas_img" width="150px" height="150px"></canvas>
+            <canvas  id="canvas_img" class="hidden" width="150px" height="150px"></canvas>
+            <canvas  id="big_canvas" width="300px" height="300px"></canvas>
         </div>
-        <button id="btn_run_model">Clasificar</button>
+        <div>
+            <button id="add_noise_btn" class="btn">Añadir ruido</button>
+        <button id="btn_run_model" class="btn">Clasificar</button>
+        </div>
     
         <p class="classification">Clasificación</p>
     </main>
 
     <div class="loading_msg">
-        Cargando modelo ...
+        Cargando modelo ... (podría tardar un par de minutos ☕)
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"> </script>

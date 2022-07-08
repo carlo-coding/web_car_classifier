@@ -4,10 +4,12 @@ function getImageArr(ctx, width, height) {
     let lineArr = []
     let imageArr = []
     for(let p = 0; p < imageData.length; p += 4) {
+
+
         let r= imageData[p+0] /255.0
         let g= imageData[p+1] /255.0
         let b= imageData[p+2] /255.0
-        //let a= imageData[p+3] /255.0
+
         let rgbArr = [r, g, b]
         lineArr.push(rgbArr)
         if(lineArr.length === width) {
@@ -32,26 +34,23 @@ function getTestImageArr(width, height) {
     return imageArr;
 }
 
-/* function getFlatRandomImageArr(width, height) {
-    let lineArr = []
-    let imageArr = []
-    for(let p = 0; p < width * height; p += 1) {
-        let rgbArr = [
-            Math.sin(Math.random()+p)*255, 
-            Math.tanh(Math.random()+p)*255, 
-            Math.cos(Math.random()-p)*255,
-            Math.random()*255,
-        ]
-        lineArr.push(rgbArr)
-        if(lineArr.length === width) {
-            imageArr.push(lineArr)
-            lineArr = []
-        }
+
+const noiseColor = (color, ratio) => Math.floor(ratio*(color) + (1-ratio)*(Math.random()*255))
+
+function addNoiseToImage(ctx, width, height) {
+    let pixVals = ctx.getImageData(0, 0, width, height).data
+    let flatArray = []
+
+    let ratio = 0.9
+
+    for(let p = 0; p < pixVals.length; p += 1) {
+        flatArray.push(noiseColor(pixVals[p], ratio))
     }
-    
-    var flatImageArr = imageArr.flat(Infinity)
-    return flatImageArr;
-} */
+
+    var imageData = ctx.createImageData(width,height)
+    imageData.data.set(new Uint8ClampedArray(flatArray))
+    ctx.putImageData(imageData, 0, 0)
+}
 
 
 function makePrediction(imageArr, model) {
