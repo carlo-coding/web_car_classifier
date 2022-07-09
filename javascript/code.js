@@ -14,7 +14,7 @@ const ctxBig = bigCanvas.getContext("2d");
 
 var model = null;
 var defaultImageData = []
-var validFiles = ["image/jpeg", "image/png"];
+//var validFiles = ["image/jpeg", "image/png"];
 (async ()=> {
     console.log("Cargando modelo ...")
     model = await tf.loadLayersModel("./models/model3/model.json")
@@ -32,7 +32,7 @@ var validFiles = ["image/jpeg", "image/png"];
 
 inputImageCar.addEventListener("change", async ()=> {
     let file = inputImageCar.files[0]
-    if(!validFiles.includes(file.type)) return
+    //if(!validFiles.includes(file.type)) return
     let dataUrl = URL.createObjectURL(file)
     let img = new Image()
     img.onload = ()=> {
