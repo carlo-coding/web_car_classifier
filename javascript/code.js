@@ -13,7 +13,7 @@ const ctx = canvasImg.getContext("2d");
 const ctxBig = bigCanvas.getContext("2d");
 
 var model = null;
-var defaultImageData = []
+var defaultImageData = [];
 //var validFiles = ["image/jpeg", "image/png"];
 (async ()=> {
     console.log("Cargando modelo ...")
